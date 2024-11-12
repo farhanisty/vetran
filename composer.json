@@ -1,0 +1,18 @@
+{
+    "name": "farhanisty/vetran",
+    "description": "Php backend library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Farhanisty\\Vetran\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "farhanisty",
+            "email": "farhannivtasija@gmail.com"
+        }
+    ],
+    "require": {}
+}
