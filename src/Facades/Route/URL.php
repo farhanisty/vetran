@@ -1,6 +1,6 @@
 <?php
 
-namespace Farhanisty\Vetran\Facades;
+namespace Farhanisty\Vetran\Facades\Route;
 
 class URL
 {
