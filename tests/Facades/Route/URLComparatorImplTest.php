@@ -14,4 +14,12 @@ class URLComparatorImplTest extends TestCase
         $this->assertTrue($comparator->compare(new SimpleURL('/users/:id/'), new SimpleURL('/users/1')));
         $this->assertTrue($comparator->compare(new SimpleURL('/users/:id/getAll'), new SimpleURL('/users/1/getAll')));
     }
+
+    public function testInputParameter(): void
+    {
+        $comparator = new URLComparatorImpl();
+        $comparator->compare(new SimpleURL('/users/:id/getAll'), new SimpleURL('/users/1/getAll'));
+
+        $this->assertEquals('1', $comparator->getInputParameter()->get('id'));
+    }
 }

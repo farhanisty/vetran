@@ -10,7 +10,7 @@ class URLComparatorImpl implements URLComparator
     {
         $current = explode('/', $currentUrl->getUrl());
 
-        $attempt = explode('/', $currentUrl->getUrl());
+        $attempt = explode('/', $attemptUrl->getUrl());
 
         if (count($current) != count($attempt)) {
             return false;

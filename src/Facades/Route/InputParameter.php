@@ -14,7 +14,7 @@ class InputParameter
     public function get($key)
     {
         if (!isset($this->value[$key])) {
-            return false;
+            return null;
         }
 
         return $this->value[$key];
