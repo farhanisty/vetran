@@ -28,6 +28,22 @@ class Route
         $this->handle('POST', $url, $action);
     }
 
+    public function put(string $url, callable $action)
+    {
+        $this->handle('PUT', $url, $action);
+    }
+
+    public function delete(string $url, callable $action)
+    {
+        $this->handle('DELETE', $url, $action);
+    }
+
+    public function notFound(callable $action)
+    {
+        call_user_func($action);
+        die();
+    }
+
     public function handle(string $method, string $url, callable $action)
     {
         if ($_SERVER['REQUEST_METHOD'] != strtoupper($method)) {

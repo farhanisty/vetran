@@ -19,12 +19,14 @@ class URLComparatorImpl implements URLComparator
         $inputParameter = new InputParameter();
 
         for ($i = 0; $i < count($current); $i++) {
+            $escapeAttempt = preg_replace('/\?.*/', '', $attempt[$i]);;
+
             if (str_starts_with($current[$i], ':')) {
                 $key = substr($current[$i], 1);
-                $inputParameter->set($key, $attempt[$i]);
+                $inputParameter->set($key, $escapeAttempt);
                 continue;
             }
-            if ($current[$i] != $attempt[$i]) {
+            if ($current[$i] != $escapeAttempt) {
                 return false;
             }
         }
