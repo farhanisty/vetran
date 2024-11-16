@@ -4,7 +4,7 @@ namespace Farhanisty\Vetran\Facades\Route;
 
 class InputParameter
 {
-    private array $value;
+    private array $value = [];
 
     public function set($key, $value): void
     {
