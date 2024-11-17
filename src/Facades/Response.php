@@ -19,7 +19,7 @@ class Response
 
     public array $httpMessages;
     private array $headers;
-    private string $body;
+    private string $body = '';
 
     public function __construct()
     {
