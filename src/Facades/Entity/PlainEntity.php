@@ -6,6 +6,11 @@ abstract class PlainEntity
 {
     public function toJson(): string
     {
-        return json_encode(get_object_vars($this));
+        return json_encode($this->toArray());
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 }
