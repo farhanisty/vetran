@@ -56,6 +56,13 @@ class Response
         return $this;
     }
 
+    public function setRawBody(string $raw): self
+    {
+        $this->body = $raw;
+
+        return $this;
+    }
+
     public function setHeader(string $header): self
     {
         $this->headers[] = $header;
