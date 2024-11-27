@@ -27,4 +27,16 @@ class HTTPInput
     {
         return $this->inputParameter->getAll();
     }
+
+    public function jsonBody(): array|bool
+    {
+        $jsonBody = file_get_contents('php://input');
+
+        $data = json_decode($jsonBody, true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $data;
+        } else {
+            return false;
+        }
+    }
 }
