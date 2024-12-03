@@ -18,7 +18,6 @@ class Response
     public const SERVER_UNAVAILABLE = 503;
 
     public array $httpMessages;
-    private array $headers;
     private string $body = '';
 
     public function __construct()
@@ -65,16 +64,12 @@ class Response
 
     public function setHeader(string $header): self
     {
-        $this->headers[] = $header;
+        header($header);
         return $this;
     }
 
     public function build(): void
     {
-        foreach ($this->headers as $header) {
-            header($header);
-        }
-
         echo $this->body;
     }
 }
