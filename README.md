@@ -1,3 +1,3 @@
 # Vetran
 
-Backend library write in PHP language.
+Backend library write in PHP language. unopiniated, fast, and powerfull.
